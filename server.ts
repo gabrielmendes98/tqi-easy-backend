@@ -14,7 +14,7 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.post('/login', handleAuthentication);
-server.use('/orders', handleAuthorization);
+server.use('/alura-accesses', handleAuthorization);
 
 server.use(router);
 
