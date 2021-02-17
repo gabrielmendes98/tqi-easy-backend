@@ -486,6 +486,30 @@
       "message": "Cannot read property 'id' of undefined",
       "stack": "RegisterActivityComponent_ng_container_5_mat_option_1_Template (webpack:///src/app/pages/register-activity/register-activity.component.html:6:53)\nsetSelectedIndex (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9323:)\nsetBindingIndex (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9192:)\nviewAttachedToChangeDetector (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10312:)\nexecuteCheckHooks (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9216:)\nviewAttachedToChangeDetector (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10312:)\nexecuteCheckHooks (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9216:)\nviewAttachedToChangeDetector (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10358:)\nrefreshChildComponents (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8989:)\nprocessHostBindingOpCodes (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9242:)",
       "id": 12
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "Uncaught (in promise): HttpErrorResponse: {\"headers\":{\"normalizedNames\":{},\"lazyUpdate\":null},\"status\":500,\"statusText\":\"Internal Server Error\",\"url\":\"https://localhost:3333/profile/3\",\"ok\":false,\"name\":\"HttpErrorResponse\",\"message\":\"Http failure response for https://localhost:3333/profile/3: 500 Internal Server Error\",\"error\":{\"message\":\"jwt expired\"}}",
+      "stack": "scheduleResolveOrReject (webpack:///node_modules/zone.js/dist/zone-evergreen.js:798:)\nvalue.hasOwnProperty (webpack:///node_modules/zone.js/dist/zone-evergreen.js:750:)\nzone.scheduleMicroTask(source, (webpack:///node_modules/zone.js/dist/zone-evergreen.js:860:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ndrainMicroTaskQueue (webpack:///node_modules/zone.js/dist/zone-evergreen.js:569:)\ntask.zone.runTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:484:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)",
+      "id": 13
+    }
+  ],
+  "tokens": [
+    {
+      "userId": 3,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6ImdhYnJpZWxAZ21haWwuY29tIiwibmFtZSI6IkdhYnJpZWwgU2FudGlhZ28iLCJyb2xlIjoiRGV2IEZyb250LWVuZCIsIm5ld1Bhc3N3b3JkIjoiMTIzNCJ9LCJpc3MiOiJ0cWktYXBpIiwiaWF0IjoxNjEzNTIxODU4LCJleHAiOjE2MTYxMTM4NTh9.OYjvsohrg-BI97sP4fgtKcOcjhyok9TFePPzi6Euw7E",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6ImdhYnJpZWxAZ21haWwuY29tIiwibmFtZSI6IkdhYnJpZWwgU2FudGlhZ28iLCJyb2xlIjoiRGV2IEZyb250LWVuZCIsIm5ld1Bhc3N3b3JkIjoiMTIzNCJ9LCJpc3MiOiJ0cWktYXBpIiwiaWF0IjoxNjEzNTIyMjA3LCJleHAiOjE2MTYxMTQyMDd9.aUeMD_nUtDROlHvHEWRfXLarlNBFc9ZjgBx3E8lzeGA",
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6ImdhYnJpZWxAZ21haWwuY29tIiwibmFtZSI6IkdhYnJpZWwgU2FudGlhZ28iLCJyb2xlIjoiRGV2IEZyb250LWVuZCIsIm5ld1Bhc3N3b3JkIjoiMTIzNCJ9LCJpc3MiOiJ0cWktYXBpIiwiaWF0IjoxNjEzNTIyMzY3LCJleHAiOjE2MTYxMTQzNjd9.R_MP0IW90JGb0oBpKIXmamapce_6flCX6efSUWJBaM8",
+      "id": 3
     }
   ]
 }

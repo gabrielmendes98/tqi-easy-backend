@@ -22,22 +22,22 @@ server.use('/profile', handleAuthorization);
 server.use('/announcements', handleAuthorization);
 server.use('/comments', handleAuthorization);
 
-server.post('/refresh-token', function (req, res) {
-  const refreshToken = req.body.refreshToken;
+// server.post('/refresh-token', function (req, res) {
+//   const refreshToken = req.body.refreshToken;
 
-  if (!refreshToken) {
-    return res.status(403).send('Acesso negado.');
-  }
+//   if (!refreshToken) {
+//     return res.status(403).send('Acesso negado.');
+//   }
 
-  try {
-    const newTokens = jwtService.refreshToken(refreshToken, res);
+//   try {
+//     const newTokens = jwtService.refreshToken(refreshToken, res);
 
-    res.send(newTokens);
-  } catch (err) {
-    const message = (err && err.message) || err;
-    res.status(403).send(message);
-  }
-});
+//     res.send(newTokens);
+//   } catch (err) {
+//     const message = (err && err.message) || err;
+//     res.status(403).send(message);
+//   }
+// });
 
 server.use(router);
 
