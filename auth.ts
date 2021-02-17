@@ -1,19 +1,20 @@
 import { Request, Response } from 'express';
 import * as jwt from 'jsonwebtoken';
 
-import { User } from './users';
+import { User } from './models';
 import { apiConfig } from './api-config';
 import * as fs from 'fs';
 
-export const handleAuthentication = (req: Request, resp: Response) => {
+export const handleAuthentication = (req: Request, res: Response) => {
   const { email, password } = req.body;
   const user = getUser(email, password);
   if (user) {
-    const _user = { id: user.id,  name: user.name, email: user.email, role: user.role }
-    const token = jwt.sign({ payload: _user, iss: 'tqi-api' }, apiConfig.secret, { expiresIn: '15min' });
-    resp.json({ accessToken: token });
+    delete user.password;
+    const accessToken = jwt.sign({ payload: user, iss: 'tqi-api' }, apiConfig.secret, { expiresIn: '1min' });
+    const refreshToken = jwt.sign({ payload: user, iss: 'tqi-api'}, apiConfig.secret, { expiresIn: '30d' });
+    res.json({ accessToken, refreshToken });
   } else {
-    resp.status(403).json({ message: 'Dados inválidos' });
+    res.status(403).json({ message: 'Dados inválidos' });
   }
 };
 

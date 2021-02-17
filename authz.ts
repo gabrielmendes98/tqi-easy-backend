@@ -10,8 +10,9 @@ export const handleAuthorization = (req: Request, res: Response, next) => {
     res.status(401).json({ message: 'Você precisa se autenticar.' });
   } else {
     jwt.verify(token, apiConfig.secret, (error, decoded) => {
+      if(error) res.status(500).json({ message: error.message });
       if (decoded) next();
-      else res.status(403).json({ message: 'Não autorizado.' });
+      else res.status(401).json({ message: 'Não autorizado.' });
     });
   }
 };

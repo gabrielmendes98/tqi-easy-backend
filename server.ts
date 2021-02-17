@@ -14,7 +14,30 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 server.post('/login', handleAuthentication);
-server.use('/alura-accesses', handleAuthorization);
+server.use('/dashboard-info', handleAuthorization);
+server.use('/users', handleAuthorization);
+server.use('/projects', handleAuthorization);
+server.use('/activities', handleAuthorization);
+server.use('/profile', handleAuthorization);
+server.use('/announcements', handleAuthorization);
+server.use('/comments', handleAuthorization);
+
+server.post('/refresh-token', function (req, res) {
+  const refreshToken = req.body.refreshToken;
+
+  if (!refreshToken) {
+    return res.status(403).send('Acesso negado.');
+  }
+
+  try {
+    const newTokens = jwtService.refreshToken(refreshToken, res);
+
+    res.send(newTokens);
+  } catch (err) {
+    const message = (err && err.message) || err;
+    res.status(403).send(message);
+  }
+});
 
 server.use(router);
 
