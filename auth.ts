@@ -2,13 +2,12 @@ import { Request, Response } from 'express';
 import * as fs from 'fs';
 
 import { User } from './models';
-import { JWTService } from './jwt';
+import JWTService from './jwt';
 
 export const handleAuthentication = (req: Request, res: Response) => {
   const { email, password } = req.body;
   const user = getUser(email, password);
   if (user) {
-    delete user.password;
     const accessToken = JWTService.getAccessToken(user);
     const refreshToken = JWTService.getRefreshToken(user);
     res.json({ accessToken, refreshToken });

@@ -13,12 +13,14 @@ const api = axios.create({
   baseURL: 'https://localhost:3333'
 });
 
-export class JWTService {
-  static getAccessToken(user: User) {
+class JWTService {
+  getAccessToken(user: User) {
+    delete user.password;
     return jwt.sign({ payload: user, iss: 'tqi-api' }, jwtSecretString, { expiresIn: '1min' });
   }
 
-  static getRefreshToken(user: User) {
+  getRefreshToken(user: User) {
+    delete user.password;
     // get all user's refresh tokens from DB
     let tokens: Token[] = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf8' })).tokens;
     const userRefreshTokens = tokens.filter(token => token.userId === user.id);
@@ -37,4 +39,51 @@ export class JWTService {
   
     return refreshToken;
   }
+
+  refreshToken(token: string) {
+    // get decoded data
+    const decodedToken: any = jwt.verify(token, jwtSecretString);
+    console.log(decodedToken)
+    // find the user in the user table
+    const db = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf8' }));
+    const user = db.users.find(user => user.id = decodedToken.payload.id);
+  
+    if (!user) {
+      throw new Error('Acesso negado.');
+    }
+  
+    // get all user's refresh tokens from DB
+    const allRefreshTokens = db.tokens.filter(refreshToken => refreshToken.userId === user.id);
+  
+    if (!allRefreshTokens || !allRefreshTokens.length) {
+      throw new Error('Esse usuário não pussui refresh tokens.');
+    }
+  
+    const currentRefreshToken = allRefreshTokens.find(refreshToken => refreshToken.refreshToken === token);
+  
+    if (!currentRefreshToken) {
+      throw new Error('Refresh token inválido.');
+    }
+
+    // get new refresh and access token
+    const newRefreshToken = this.getUpdatedRefreshToken(currentRefreshToken, user);
+    const newAccessToken = this.getAccessToken(user);
+  
+    return {
+      accessToken: newAccessToken,
+      refreshToken: newRefreshToken
+    };
+  }
+  
+  private getUpdatedRefreshToken(oldRefreshToken, user: User) {
+    delete user.password;
+    // create new refresh token
+    const newRefreshToken = jwt.sign({ payload: user }, jwtSecretString, { expiresIn: '30d' });
+    // replace current refresh token with new one
+    api.patch('/tokens/' + oldRefreshToken.id, { refreshToken: newRefreshToken });
+  
+    return newRefreshToken;
+  }
 }
+
+export default new JWTService();

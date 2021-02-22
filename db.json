@@ -493,6 +493,41 @@
       "message": "Uncaught (in promise): HttpErrorResponse: {\"headers\":{\"normalizedNames\":{},\"lazyUpdate\":null},\"status\":500,\"statusText\":\"Internal Server Error\",\"url\":\"https://localhost:3333/profile/3\",\"ok\":false,\"name\":\"HttpErrorResponse\",\"message\":\"Http failure response for https://localhost:3333/profile/3: 500 Internal Server Error\",\"error\":{\"message\":\"jwt expired\"}}",
       "stack": "scheduleResolveOrReject (webpack:///node_modules/zone.js/dist/zone-evergreen.js:798:)\nvalue.hasOwnProperty (webpack:///node_modules/zone.js/dist/zone-evergreen.js:750:)\nzone.scheduleMicroTask(source, (webpack:///node_modules/zone.js/dist/zone-evergreen.js:860:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ndrainMicroTaskQueue (webpack:///node_modules/zone.js/dist/zone-evergreen.js:569:)\ntask.zone.runTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:484:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)",
       "id": 13
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "throwError is not defined",
+      "stack": "(this.tokenService.hasToken (webpack:///src/app/core/auth/auth.interceptor.ts:29:8)\nerror (webpack:///node_modules/rxjs/_esm2015/internal/operators/catchError.js:27:)\nXMLHttpRequest.onLoad (webpack:///node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js:1700:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:480:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)\ntasks.slice (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1658:)",
+      "id": 14
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "throwError is not defined",
+      "stack": "(this.tokenService.hasToken (webpack:///src/app/core/auth/auth.interceptor.ts:29:8)\nerror (webpack:///node_modules/rxjs/_esm2015/internal/operators/catchError.js:27:)\nXMLHttpRequest.onLoad (webpack:///node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js:1700:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:480:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)\ntasks.slice (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1658:)",
+      "id": 15
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "Cannot read property 'refreshToken' of undefined",
+      "stack": "refreshToken (webpack:///src/app/core/auth/auth.interceptor.ts:47:30)\nthis.tokenService.getToken (webpack:///src/app/core/auth/auth.interceptor.ts:33:24)\nerror (webpack:///node_modules/rxjs/_esm2015/internal/operators/catchError.js:27:)\nXMLHttpRequest.onLoad (webpack:///node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js:1700:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:480:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)",
+      "id": 16
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "switchMap is not defined",
+      "stack": "refreshToken (webpack:///src/app/core/auth/auth.interceptor.ts:48:45)\nthis.tokenService.getToken (webpack:///src/app/core/auth/auth.interceptor.ts:34:24)\nerror (webpack:///node_modules/rxjs/_esm2015/internal/operators/catchError.js:27:)\nXMLHttpRequest.onLoad (webpack:///node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js:1700:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:480:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)",
+      "id": 17
+    },
+    {
+      "user": 3,
+      "url": "/register-activity",
+      "message": "switchMap is not defined",
+      "stack": "refreshToken (webpack:///src/app/core/auth/auth.interceptor.ts:48:45)\nthis.tokenService.getToken (webpack:///src/app/core/auth/auth.interceptor.ts:34:24)\nerror (webpack:///node_modules/rxjs/_esm2015/internal/operators/catchError.js:27:)\nXMLHttpRequest.onLoad (webpack:///node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js:1700:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:399:)\nonInvokeTask (webpack:///node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:28282:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:398:)\ntask._transitionTo (webpack:///node_modules/zone.js/dist/zone-evergreen.js:167:)\ninvokeTask (webpack:///node_modules/zone.js/dist/zone-evergreen.js:480:)\ncallback (webpack:///node_modules/zone.js/dist/zone-evergreen.js:1621:)",
+      "id": 18
     }
   ],
   "tokens": [
@@ -510,6 +545,16 @@
       "userId": 3,
       "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6ImdhYnJpZWxAZ21haWwuY29tIiwibmFtZSI6IkdhYnJpZWwgU2FudGlhZ28iLCJyb2xlIjoiRGV2IEZyb250LWVuZCIsIm5ld1Bhc3N3b3JkIjoiMTIzNCJ9LCJpc3MiOiJ0cWktYXBpIiwiaWF0IjoxNjEzNTIyMzY3LCJleHAiOjE2MTYxMTQzNjd9.R_MP0IW90JGb0oBpKIXmamapce_6flCX6efSUWJBaM8",
       "id": 3
+    },
+    {
+      "userId": 3,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6Imp1cmVnQGdtYWlsLmNvbSIsIm5hbWUiOiJKdXJlZyBkbyBQw6JudGFubyIsInJvbGUiOiJSZWN1cnNvcyBIdW1hbm9zIn0sImlhdCI6MTYxNDAwMzE0NSwiZXhwIjoxNjE2NTk1MTQ1fQ.Neqtsj1cUd3J37NY_YWrE-R-2Grdwk1QMVgDFz0kLWQ",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6Imp1cmVnQGdtYWlsLmNvbSIsIm5hbWUiOiJKdXJlZyBkbyBQw6JudGFubyIsInJvbGUiOiJSZWN1cnNvcyBIdW1hbm9zIn0sImlhdCI6MTYxNDAwMzI5NSwiZXhwIjoxNjE2NTk1Mjk1fQ.VBjHXmomVaoKMnoRIGcZ1Anux_TCL0ZNidixwIwK7v0",
+      "id": 5
     }
   ]
 }
