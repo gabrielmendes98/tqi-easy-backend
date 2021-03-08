@@ -16,14 +16,14 @@ const api = axios.create({
 class JWTService {
   getAccessToken(user: User) {
     delete user.password;
-    return jwt.sign({ payload: user, iss: 'tqi-api' }, jwtSecretString, { expiresIn: '1min' });
+    return jwt.sign({ payload: user, iss: 'tqi-api' }, jwtSecretString, { expiresIn: '15min' });
   }
 
   getRefreshToken(user: User) {
     delete user.password;
     // get all user's refresh tokens from DB
     let tokens: Token[] = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf8' })).tokens;
-    const userRefreshTokens = tokens.filter(token => token.userId === user.id);
+    const userRefreshTokens = tokens.filter(token => token.userId == user.id);
   
     // check if there are 5 or more refresh tokens,
     // which have already been generated. In this case we should
@@ -46,7 +46,7 @@ class JWTService {
     console.log(decodedToken)
     // find the user in the user table
     const db = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf8' }));
-    const user = db.users.find(user => user.id = decodedToken.payload.id);
+    const user = db.users.find(user => user.id === decodedToken.payload.id);
   
     if (!user) {
       throw new Error('Acesso negado.');
