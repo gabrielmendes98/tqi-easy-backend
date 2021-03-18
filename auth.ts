@@ -18,5 +18,5 @@ export const handleAuthentication = (req: Request, res: Response) => {
 
 function getUser(email: string, password: string): User {
   const dbUser = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf8' })).users;
-  return dbUser.find((user) => user.email === email && user.password === password);
+  return dbUser.find((user: User) => user.email === email && user.password === password);
 }

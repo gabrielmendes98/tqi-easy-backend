@@ -1,10 +1,14 @@
 import * as jsonServer from 'json-server';
 import * as fs from 'fs';
 import * as https from 'https';
+  
+import * as dotenv from 'dotenv';
 
 import { handleAuthentication } from './auth';
 import { handleAuthorization } from './authz';
 import JWTService from './jwt';
+
+dotenv.config();
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
@@ -42,11 +46,17 @@ server.post('/refresh-token', function (req, res) {
 
 server.use(router);
 
+
 const options = {
   cert: fs.readFileSync('./keys/cert.pem'),
   key: fs.readFileSync('./keys/key.pem'),
 };
 
-https.createServer(options, server).listen(3333, () => {
-  console.log('JSON Server running on https://localhost:3333');
-});
+if(process.env.PORT) {
+  server.listen(process.env.PORT);
+} else {
+  https.createServer(options, server).listen(3333, '192.168.100.18', () => {
+    console.log(`Server running at https://192.168.100.18:3333/`);
+  });
+}
+
