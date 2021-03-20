@@ -27,7 +27,7 @@ server.use('/activities', handleAuthorization);
 server.use('/profile', handleAuthorization);
 server.use('/announcements', handleAuthorization);
 server.use('/comments', handleAuthorization);
-server.use('/subscriptions', handleAuthentication);
+server.use('/subscriptions');
 
 server.post('/send-notification', sendNotification);
 
