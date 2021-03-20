@@ -1,14 +1,15 @@
 import * as jsonServer from 'json-server';
 import * as fs from 'fs';
 import * as https from 'https';
-  
 import * as dotenv from 'dotenv';
-
 import { handleAuthentication } from './auth';
 import { handleAuthorization } from './authz';
 import JWTService from './jwt';
+import { sendNotification } from './sendNotification';
 
 dotenv.config();
+
+
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
@@ -26,6 +27,9 @@ server.use('/activities', handleAuthorization);
 server.use('/profile', handleAuthorization);
 server.use('/announcements', handleAuthorization);
 server.use('/comments', handleAuthorization);
+server.use('/subscriptions', handleAuthentication);
+
+server.post('/send-notification', sendNotification);
 
 server.post('/refresh-token', function (req, res) {
   const refreshToken = req.body.refreshToken;

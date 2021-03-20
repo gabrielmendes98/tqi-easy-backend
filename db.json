@@ -523,5 +523,6 @@
       "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjozLCJlbWFpbCI6ImdhYnJpZWxAZ21haWwuY29tIiwibmFtZSI6IkdhYnJpZWwgU2FudGlhZ28iLCJyb2xlIjoiRGV2IEZyb250LWVuZCIsIm5ld1Bhc3N3b3JkIjoiMTIzNCJ9LCJpYXQiOjE2MTUyMDY0ODYsImV4cCI6MTYxNzc5ODQ4Nn0.vOw5nXJLfOkEZXd5L4dEmNlFkfF77mCSq2EXLvVPsXU",
       "id": 5
     }
-  ]
+  ],
+  "subscriptions": []
 }
