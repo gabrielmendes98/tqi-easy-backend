@@ -2,6 +2,8 @@ import * as fs from 'fs';
 const webpush = require('web-push');
 
 export function sendNotification(req, res) {
+    const message = req.body.message;
+
     const vapidKeys = {
         "publicKey":"BKo1_W92IjA6pXVy01PwK81nB6tD4BULnn2rMP2EbiiYDj1HUrQ7annNscCdxMPDp0-Wa9Naf5WnGcC_6x-H-mE",
         "privateKey":"LL3fFKUQeRri1Kaxr2aeGGTEhG2BkmotlMMn-aVuE8k"
@@ -19,9 +21,9 @@ export function sendNotification(req, res) {
 
   const notificationPayload = {
       "notification": {
-          "title": "Angular News",
-          "body": "Newsletter Available!",
-          "icon": "assets/main-page-logo-small-hat.png",
+          "title": "TQI Easy",
+          "body": "Chegou uma mensagem pra você, venha conferir 😃",
+          "icon": "assets/tqi-easy-icon.svg",
           "vibrate": [100, 50, 100],
           "data": {
               "dateOfArrival": Date.now(),
@@ -29,14 +31,14 @@ export function sendNotification(req, res) {
           },
           "actions": [{
               "action": "explore",
-              "title": "Go to the site"
+              "title": "Vá para o site."
           }]
       }
   };
 
   Promise.all(allSubscriptions.map(sub => webpush.sendNotification(
       sub, JSON.stringify(notificationPayload) )))
-      .then(() => res.status(200).json({message: 'Newsletter sent successfully.'}))
+      .then(() => res.status(200).json({ message }))
       .catch(err => {
           console.error("Error sending notification, reason: ", err);
           res.sendStatus(500);
