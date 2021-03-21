@@ -27,7 +27,6 @@ server.use('/activities', handleAuthorization);
 server.use('/profile', handleAuthorization);
 server.use('/announcements', handleAuthorization);
 server.use('/comments', handleAuthorization);
-server.use('/subscriptions');
 
 server.post('/send-notification', sendNotification);
 
@@ -59,8 +58,8 @@ const options = {
 if(process.env.PORT) {
   server.listen(process.env.PORT);
 } else {
-  https.createServer(options, server).listen(3333, '192.168.100.18', () => {
-    console.log(`Server running at https://192.168.100.18:3333/`);
+  https.createServer(options, server).listen(3333, 'localhost', () => {
+    console.log(`Server running at https://localhost:3333/`);
   });
 }
 
