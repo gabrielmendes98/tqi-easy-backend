@@ -20,8 +20,8 @@ export function sendNotification(req, res) {
     notification: {
       title: 'TQI Easy',
       body: message,
-      icon: 'https://www.materialui.co/download/materialuiIcon?path=action&image=accessibility_black_192x192.png',
-      badge: 'https://www.materialui.co/download/materialuiIcon?path=action&image=accessibility_black_192x192.png',
+      icon: 'https://tqi-easy-backend.herokuapp.com/assets/tqi-easy-icon-192.png',
+      badge: 'https://tqi-easy-backend.herokuapp.com/assets/tqi-easy-icon-72.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
