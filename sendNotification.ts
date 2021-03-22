@@ -3,6 +3,7 @@ const webpush = require('web-push');
 
 export function sendNotification(req, res) {
   const message = req.body.message;
+  const image = req.body.image;
 
   const vapidKeys = {
     publicKey: 'BKo1_W92IjA6pXVy01PwK81nB6tD4BULnn2rMP2EbiiYDj1HUrQ7annNscCdxMPDp0-Wa9Naf5WnGcC_6x-H-mE',
@@ -18,9 +19,10 @@ export function sendNotification(req, res) {
   const notificationPayload = {
     notification: {
       title: 'TQI Easy',
-      body: 'Chegou uma mensagem pra você, venha conferir 😃',
-      icon: './assets/tqi-easy-icon-192.png',
-      badge: './assets/tqi-easy-icon-72.png',
+      body: message,
+      // icon: './assets/tqi-easy-icon-192.png',
+      // badge: './assets/tqi-easy-icon-72.png',
+      icon: image,
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -36,7 +38,7 @@ export function sendNotification(req, res) {
   };
 
   Promise.all(allSubscriptions.map((sub) => webpush.sendNotification(sub, JSON.stringify(notificationPayload))))
-    .then(() => res.status(200).json({ message }))
+    .then(() => res.status(200).json({ message: 'Notification send successfully.' }))
     .catch((err) => {
       console.error('Error sending notification, reason: ', err);
       res.sendStatus(500);
