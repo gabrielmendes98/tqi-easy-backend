@@ -19,8 +19,8 @@ export function sendNotification(req, res) {
     notification: {
       title: 'TQI Easy',
       body: 'Chegou uma mensagem pra você, venha conferir 😃',
-      icon: 'assets/tqi-easy-icon-192.png',
-      badge: 'assets/tqi-easy-icon-72.png',
+      icon: './assets/tqi-easy-icon-192.png',
+      badge: './assets/tqi-easy-icon-72.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
