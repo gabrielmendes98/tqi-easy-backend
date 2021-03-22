@@ -20,9 +20,8 @@ export function sendNotification(req, res) {
     notification: {
       title: 'TQI Easy',
       body: message,
-      // icon: './assets/tqi-easy-icon-192.png',
-      // badge: './assets/tqi-easy-icon-72.png',
-      icon: image,
+      icon: 'assets/tqi-easy-icon-192.png',
+      badge: 'assets/tqi-easy-icon-72.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
