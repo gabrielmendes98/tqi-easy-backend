@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && copyfiles assets/*.png dist",
     "start": "node dist/server.js",
     "dev": "nodemon server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "json-server": "^0.16.3",
     "jsonwebtoken": "^8.5.1",
+    "copyfiles": "^2.4.1",
     "web-push": "^3.4.4"
   },
   "devDependencies": {
