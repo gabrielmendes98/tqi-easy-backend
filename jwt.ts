@@ -10,7 +10,7 @@ const api = axios.create({
   httpsAgent: new https.Agent({  
     rejectUnauthorized: false
   }),
-  baseURL: 'https://localhost:3333'
+  baseURL: process.env.BASE_URL
 });
 
 class JWTService {
